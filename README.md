@@ -6,10 +6,19 @@ I keep semi-useful pieces of js code here, hehe
 
 Paste the following lines of code to use the particular extension(same as what is given in the folder of the extension)
 
+This is temporary and might not work ):
+
+I will definitely find a better way... Till then, you can directly paste the code inside the function main of the js file you would like to use ;).
+
 - video playback:
 
   ```js
-  document.write(
-    `<script type="text/javascript" src="https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js"></script>`,
+  let scr = document.createElement('script');
+  scr.setAttribute('type', 'text/javascript');
+  scr.setAttribute(
+    'href',
+    'https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js',
   );
+  document.head.appendChild(scr);
+  main();
   ```

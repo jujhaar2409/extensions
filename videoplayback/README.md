@@ -5,9 +5,14 @@
 Paste the following in the console(open using ctrl+shift+I on windows and cmd+opt+I on mac) of you browser to use the extension
 
 ```js
-document.write(
-  `<script type="text/javascript" src="https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js"></script>`,
+let scr = document.createElement('script');
+scr.setAttribute('type', 'text/javascript');
+scr.setAttribute(
+  'href',
+  'https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js',
 );
+document.head.appendChild(scr);
+main();
 ```
 
 ## Functionality
