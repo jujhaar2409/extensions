@@ -10,6 +10,6 @@ Paste the following lines of code to use the particular extension(same as what i
 
   ```js
   document.write(
-    `<script type="text/javascript" src="https://cdn.statically.io/gh/jujhaar2409/extensions/videoplayback/videoplayback.js"></script>`,
+    `<script type="text/javascript" src="https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js"></script>`,
   );
   ```

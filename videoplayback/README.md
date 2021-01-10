@@ -6,7 +6,7 @@ Paste the following in the console(open using ctrl+shift+I on windows and cmd+op
 
 ```js
 document.write(
-  `<script type="text/javascript" src="https://cdn.statically.io/gh/jujhaar2409/extensions/videoplayback/videoplayback.js"></script>`,
+  `<script type="text/javascript" src="https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js"></script>`,
 );
 ```
 
