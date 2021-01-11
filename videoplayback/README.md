@@ -8,7 +8,7 @@ Paste the following in the console(open using ctrl+shift+I on windows and cmd+op
 let scr = document.createElement('script');
 scr.setAttribute('type', 'text/javascript');
 scr.setAttribute(
-  'href',
+  'src',
   'https://jujhaar2409.github.io/extensions/videoplayback/videoplayback.js',
 );
 document.head.appendChild(scr);

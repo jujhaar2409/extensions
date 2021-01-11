@@ -16,7 +16,7 @@ I will definitely find a better way... Till then, you can directly paste the cod
   let scr = document.createElement('script');
   scr.setAttribute('type', 'text/javascript');
   scr.setAttribute(
-    'href',
+    'src',
     'https://jujhaar2409.github.io/extensions/videoplayback/videoplayback.js',
   );
   document.head.appendChild(scr);
