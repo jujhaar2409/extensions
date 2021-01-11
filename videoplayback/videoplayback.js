@@ -73,6 +73,8 @@ function main() {
   });
 
   document.querySelector('body').appendChild(outerDiv);
+
+  document.removeEventListener('click', main);
 }
 
-main();
+document.addEventListener('click', main);

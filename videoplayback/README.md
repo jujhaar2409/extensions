@@ -12,7 +12,6 @@ scr.setAttribute(
   'https://jujhaar2409.github.io/extensions/videoplayback/videoplayback.js',
 );
 document.head.appendChild(scr);
-main();
 ```
 
 ## Functionality
