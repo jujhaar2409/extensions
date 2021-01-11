@@ -22,7 +22,7 @@ function main() {
   viewButton.value = 'toggle';
   viewButton.style.display = 'inline-block';
   viewButton.style.zIndex = '10000002';
-  outerDiv.style.position = 'absolute';
+  outerDiv.style.position = 'fixed';
   outerDiv.style.top = '10px';
   outerDiv.style.right = '10px';
   outerDiv.style.width = '200px';
