@@ -74,3 +74,5 @@ function main() {
 
   document.querySelector('body').appendChild(outerDiv);
 }
+
+main();

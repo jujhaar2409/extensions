@@ -9,7 +9,7 @@ let scr = document.createElement('script');
 scr.setAttribute('type', 'text/javascript');
 scr.setAttribute(
   'href',
-  'https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js',
+  'https://jujhaar2409.github.io/extensions/videoplayback/videoplayback.js',
 );
 document.head.appendChild(scr);
 main();

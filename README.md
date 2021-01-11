@@ -11,13 +11,13 @@ This is temporary and might not work ):
 I will definitely find a better way... Till then, you can directly paste the code inside the function main of the js file you would like to use ;).
 
 - video playback:
-
+  w
   ```js
   let scr = document.createElement('script');
   scr.setAttribute('type', 'text/javascript');
   scr.setAttribute(
     'href',
-    'https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js',
+    'https://jujhaar2409.github.io/extensions/videoplayback/videoplayback.js',
   );
   document.head.appendChild(scr);
   main();
