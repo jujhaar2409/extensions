@@ -27,6 +27,7 @@ function main() {
   outerDiv.style.right = '10px';
   outerDiv.style.width = '200px';
   outerDiv.style.height = '200px';
+  outerDiv.style.zIndex = '10000001';
 
   let playbackSpeedDiv = document.createElement('div', {
     id: 'playback-speed',
@@ -37,7 +38,7 @@ function main() {
   playbackSpeedDiv.style.display = 'flex';
   playbackSpeedDiv.style.justifyContent = 'space-between';
   playbackSpeedDiv.style.flexDirection = 'horizontal';
-  playbackSpeedDiv.style.zIndex = '10000000';
+  playbackSpeedDiv.style.zIndex = '10000001';
   playbackSpeedDiv.style.border = 'black 2px dotted';
   playbackSpeedDiv.style.backgroundColor = 'white';
 
