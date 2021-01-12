@@ -8,7 +8,7 @@ This is temporary and might not work ):
 
 I will definitely find a better way... Till then, you can directly paste the code inside the function main of the js file you would like to use ;).
 
-- video playback:
+- [video playback(click for details)](https://jujhaar2409.github.io/extensions/videoplayback/):
 
   ```js
   let scr = document.createElement('script');
