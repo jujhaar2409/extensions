@@ -1,18 +1,31 @@
 function main() {
-  let video = document.querySelector('video');
-  video = document.querySelector('video');
+  let videos = document.querySelectorAll('video');
   let tdelta = 5;
 
-  let isPlaying = false;
-  isPlaying = false;
+  function isChild(parentNodes, element) {
+    for (el of parentNodes) {
+      if (el.contains(element)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   document.onkeypress = (e) => {
-    if (e.key === ' ' || e.key === 'k') {
-      isPlaying ? video.pause() : video.play();
-      isPlaying = !isPlaying;
-    } else if (e.key === 'j') {
-      video.currentTime -= tdelta;
-    } else if (e.key === 'l') {
-      video.currentTime += tdelta;
+    for (vid of videos) {
+      console.log(document.activeElement);
+      if (
+        isChild(document.activeElement.childNodes, vid) ||
+        document.activeElement === vid
+      ) {
+        if (e.key === ' ' || e.key === 'k') {
+          !vid.paused ? vid.pause() : vid.play();
+        } else if (e.key === 'j') {
+          vid.currentTime -= tdelta;
+        } else if (e.key === 'l') {
+          vid.currentTime += tdelta;
+        }
+      }
     }
   };
 
@@ -51,9 +64,7 @@ function main() {
   });
 
   let playbackSpeedField = document.createElement('input', { type: 'number' });
-  playbackSpeedField = document.createElement('input', { type: 'number' });
   let playbackSpeedButton = document.createElement('input');
-  playbackSpeedButton = document.createElement('input');
 
   playbackSpeedDiv.appendChild(playbackSpeedField);
   playbackSpeedDiv.appendChild(playbackSpeedButton);
@@ -70,7 +81,7 @@ function main() {
 
   playbackSpeedButton.addEventListener('click', (e) => {
     e.preventDefault();
-    video.playbackRate = playbackSpeedField.value;
+    videos.playbackRate = playbackSpeedField.value;
   });
 
   document.querySelector('body').appendChild(outerDiv);
