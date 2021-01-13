@@ -17,6 +17,6 @@ I will definitely find a better way... Till then, you can directly paste the cod
     'src',
     'https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js',
   );
-  document.head.appendChild(scr);
+  document.body.appendChild(scr);
   main();
   ```
