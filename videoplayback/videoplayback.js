@@ -13,7 +13,6 @@ function main() {
 
   document.onkeypress = (e) => {
     for (vid of videos) {
-      console.log(document.activeElement);
       if (
         isChild(document.activeElement.childNodes, vid) ||
         document.activeElement === vid
