@@ -15,7 +15,7 @@ I will definitely find a better way... Till then, you can directly paste the cod
   scr.setAttribute('type', 'text/javascript');
   scr.setAttribute(
     'src',
-    'https://cdn.statically.io/gh/jujhaar2409/extensions/master/videoplayback/videoplayback.js',
+    'https://jujhaar2409.github.io/extensions/videoplayback/videoplayback.js',
   );
   document.body.appendChild(scr);
   main();
