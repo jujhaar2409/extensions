@@ -1,48 +1,5 @@
 function main() {
   let videos = document.querySelectorAll('video');
-  let tdelta = 5;
-
-  function isChild(parentNodes, element) {
-    for (el of parentNodes) {
-      if (el.contains(element)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  function getUniqueVidElem(videos) {
-    let active;
-    let count = 0;
-    videlem = null;
-    count = 0;
-    active = document.activeElement;
-    for (vid of videos) {
-      if (isChild(active.childNodes, vid) || active === vid) {
-        count += 1;
-        videlem = vid;
-      }
-    }
-    return count == 1 ? videlem : null;
-  }
-
-  let videlem = null;
-  let newvidelem = null;
-  document.onkeypress = (e) => {
-    newvidelem = getUniqueVidElem(videos);
-    if (newvidelem !== null) {
-      videlem = newvidelem;
-    }
-    if (newvidelem !== null) {
-      if (e.key === ' ' || e.key === 'k') {
-        !videlem.paused ? videlem.pause() : videlem.play();
-      } else if (e.key === 'j') {
-        videlem.currentTime -= tdelta;
-      } else if (e.key === 'l') {
-        videlem.currentTime += tdelta;
-      }
-    }
-  };
 
   let outerDiv = document.createElement('div', { id: 'playback-speed' });
   let viewButton = document.createElement('input');
@@ -70,14 +27,6 @@ function main() {
   playbackSpeedDiv.style.border = 'black 2px dotted';
   playbackSpeedDiv.style.backgroundColor = 'white';
 
-  viewButton.addEventListener('click', (e) => {
-    if (playbackSpeedDiv.style.opacity == '1') {
-      playbackSpeedDiv.style.opacity = '0';
-    } else {
-      playbackSpeedDiv.style.opacity = '1';
-    }
-  });
-
   let playbackSpeedField = document.createElement('input', { type: 'number' });
   let playbackSpeedButton = document.createElement('input');
 
@@ -94,9 +43,67 @@ function main() {
   playbackSpeedButton.style.zIndex = '10000001';
   playbackSpeedButton.value = 'Set';
 
+  function isChild(parentNodes, element) {
+    for (el of parentNodes) {
+      if (el.contains(element)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function getUniqueVidElem(videos) {
+    let active;
+    let count = 0;
+    let newelem;
+    count = 0;
+    active = document.activeElement;
+    for (vid of videos) {
+      if (isChild(active.childNodes, vid) || active === vid) {
+        count += 1;
+        newelem = vid;
+      }
+    }
+    return count == 1 ? newelem : videlem;
+  }
+
+  let videlem = null;
+
+  document.addEventListener('click', (ev) => {
+    console.log(videlem);
+    if (videlem == null) videlem = getUniqueVidElem(videos);
+    console.log(videlem);
+  });
+
+  let newvidelem = null;
+  let tdelta = 5;
+  document.onkeypress = (e) => {
+    newvidelem = getUniqueVidElem(videos);
+    if (newvidelem !== null) {
+      videlem = newvidelem;
+    }
+    if (newvidelem !== null) {
+      if (e.key === ' ' || e.key === 'k') {
+        !videlem.paused ? videlem.pause() : videlem.play();
+      } else if (e.key === 'j') {
+        videlem.currentTime -= tdelta;
+      } else if (e.key === 'l') {
+        videlem.currentTime += tdelta;
+      }
+    }
+  };
+
+  viewButton.addEventListener('click', (e) => {
+    if (playbackSpeedDiv.style.opacity == '1') {
+      playbackSpeedDiv.style.opacity = '0';
+    } else {
+      playbackSpeedDiv.style.opacity = '1';
+    }
+  });
+
   playbackSpeedButton.addEventListener('click', (e) => {
     e.preventDefault();
-    if (videlem == null) videlem = getUniqueVidElem(videos);
+    if (videlem == null) return;
     videlem.playbackRate = playbackSpeedField.value;
   });
 
