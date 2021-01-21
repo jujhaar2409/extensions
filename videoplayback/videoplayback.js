@@ -70,26 +70,18 @@ function main() {
   let videlem = null;
 
   document.addEventListener('click', (ev) => {
-    console.log(videlem);
     if (videlem == null) videlem = getUniqueVidElem(videos);
-    console.log(videlem);
   });
 
-  let newvidelem = null;
   let tdelta = 5;
   document.onkeypress = (e) => {
-    newvidelem = getUniqueVidElem(videos);
-    if (newvidelem !== null) {
-      videlem = newvidelem;
-    }
-    if (newvidelem !== null) {
-      if (e.key === ' ' || e.key === 'k') {
-        !videlem.paused ? videlem.pause() : videlem.play();
-      } else if (e.key === 'j') {
-        videlem.currentTime -= tdelta;
-      } else if (e.key === 'l') {
-        videlem.currentTime += tdelta;
-      }
+    if (videlem == null) return;
+    if (e.key === ' ' || e.key === 'k') {
+      !videlem.paused ? videlem.pause() : videlem.play();
+    } else if (e.key === 'j') {
+      videlem.currentTime -= tdelta;
+    } else if (e.key === 'l') {
+      videlem.currentTime += tdelta;
     }
   };
 
