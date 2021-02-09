@@ -70,7 +70,7 @@ function main() {
   let videlem = null;
 
   document.addEventListener('click', (ev) => {
-    if (videlem == null) videlem = getUniqueVidElem(videos);
+    videlem = getUniqueVidElem(videos);
   });
 
   let tdelta = 5;
