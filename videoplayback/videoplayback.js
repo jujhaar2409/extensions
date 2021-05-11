@@ -85,7 +85,7 @@ function main() {
   showInfo();
   document.onkeydown = (e) => {
     if (videlem == null) videlem = defaultvidelem;
-    if (e.key === ' ' || e.key === 'k') {
+    if (e.key === 'k') {
       !videlem.paused ? videlem.pause() : videlem.play();
     } else if (e.key === 'j') {
       videlem.currentTime -= 2 * tdelta * playbackSpeedField.value;

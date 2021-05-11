@@ -26,4 +26,4 @@ Paste the following in the console(open using ctrl+shift+I on windows and cmd+op
 
 - Forward or rewind by `10s * (speed of video)` using `←` or `→` respectively
 
-- Pause using `k`
+- Pause using the spacebar or `k`
