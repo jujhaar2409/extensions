@@ -26,6 +26,7 @@ function showInfo() {
     font-family: Verdana, sans-serif;
     padding: 5px 10px;
     border-radius: 10px;
+    z-index: 100000;
   `;
   document.body.appendChild(info);
   setTimeout(() => {
@@ -47,6 +48,7 @@ function main() {
   playbackSpeedField.style.color = 'white';
   playbackSpeedField.style.border = 'none';
   playbackSpeedField.style.borderRadius = '5px';
+  playbackSpeedField.style.zIndex = 100000;
   playbackSpeedField.step = 0.25;
   playbackSpeedField.value = 1;
 
@@ -84,6 +86,8 @@ function main() {
   let tdelta = 5;
   showInfo();
   document.onkeydown = (e) => {
+    let target = e.target.tagName.toLowerCase()
+    if (target === "input" || target === "textarea") return
     if (videlem == null) videlem = defaultvidelem;
     if (e.key === 'k') {
       !videlem.paused ? videlem.pause() : videlem.play();
