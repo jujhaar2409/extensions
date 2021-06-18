@@ -95,9 +95,17 @@ function main() {
       videlem.currentTime -= 2 * tdelta * playbackSpeedField.value;
     } else if (e.key === 'l') {
       videlem.currentTime += 2 * tdelta * playbackSpeedField.value;
-    } else if (e.key === 'f') {
+    } else if (e.key === 'f' && e.ctrlKey) {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    } else if (e.key === 'f') {
+      if (!document.fullscreenElement) {
+        videlem.requestFullscreen();
       } else {
         if (document.exitFullscreen) {
           document.exitFullscreen();
